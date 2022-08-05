@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { PostCard, Categories, PostWidget } from "../components";
 import Head from "next/head";
 
 const posts = [
@@ -17,13 +18,16 @@ const Home: NextPage = () => {
         <div className='col-span-1 lg:col-span-8'>
           {posts.map((post, index) => (
             <>
-              {post.title}
+              {<PostCard post={post} key={post.title} />}
               {post.excerpt}
             </>
           ))}
         </div>
         <div className='col-span-1 lg:col-span-4'>
-          <div className='relative top-8 lg:sticky'>hi</div>
+          <div className='relative top-8 lg:sticky'>
+            <PostWidget />
+            <Categories />
+          </div>
         </div>
       </div>
     </div>
