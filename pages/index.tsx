@@ -10,7 +10,7 @@ const Home: NextPage = ({ posts }: any) => {
         <title>Blog App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post: any) => {
             return <PostCard post={post.node} key={post.node.title} />;
