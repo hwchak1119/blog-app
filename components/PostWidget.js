@@ -5,7 +5,6 @@ import { getRecentPosts, getSimilarPosts } from "../services";
 
 function PostWidget({ categories, slug }) {
   const [relatedPosts, setRelatedPosts] = useState([]);
-  console.log(relatedPosts);
   useEffect(() => {
     if (slug) {
       getSimilarPosts(categories, slug).then((result) =>

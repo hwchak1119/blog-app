@@ -54,6 +54,9 @@ export const getPostDetails = async (slug) => {
         slug
         title
         excerpt
+        content {
+          raw
+        }
         featuredImage {
           url
         }
