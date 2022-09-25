@@ -94,7 +94,6 @@ const PostDetail = ({ post }) => {
           );
           return getContentFragment(index, children, typeObj, typeObj.type);
         })}
-        {console.log(post.content.raw)}
       </div>
     </div>
   );
