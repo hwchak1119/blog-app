@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const Comments = ({ slug }) => {
-  const [error, seterror] = useState(false);
+  const [error, setError] = useState(false);
   const [localStorage, setlocalStorage] = useState(null);
   const [showSuccessMessage, setshowSuccessMessage] = useState(false);
   const commentEl = useRef();
@@ -9,7 +9,35 @@ const Comments = ({ slug }) => {
   const emailEl = useRef();
   const storeDataEl = useRef();
 
-  const handleCommentSubmission = "";
+  const handleCommentSubmission = () => {
+    setError(false);
+
+    const { value: comment } = commentEl.current;
+    const { value: name } = nameEl.current;
+    const { value: email } = emailEl.current;
+    const { checked: storeData } = storeDataEl.current;
+
+    if (!comment || !name || !email) {
+      setError(true);
+      return;
+    }
+
+    const commentObj = {
+      name,
+      email,
+      comment,
+      slug,
+    };
+
+    if (storeData) {
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+    }
+    if (!storeData) {
+      localStorage.removeItem("name", name);
+      localStorage.removeItem("email", email);
+    }
+  };
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
@@ -37,6 +65,23 @@ const Comments = ({ slug }) => {
           placeholder="Email"
           name="email"
         />
+      </div>
+      <div className="grid grid-cols-1 gap-4 mb-4">
+        <div>
+          <input
+            type="checkbox"
+            ref={storeDataEl}
+            name="storeData"
+            id="storeData"
+            value="ture"
+          />
+          <label
+            htmlFor="storeData"
+            className="text-gray-500 ml-2 cursor-pointer"
+          >
+            Save my email and name.
+          </label>
+        </div>
       </div>
       {error && <p className="text-sm text-red-500">All field are required!</p>}
       <div className="mt-8">
