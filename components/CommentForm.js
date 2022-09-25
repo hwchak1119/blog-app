@@ -57,12 +57,12 @@ const CommentForm = ({ slug }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded-md p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Comments</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
-          className="p-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
+          className="p-4 outline-none w-full rounded-md focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
           placeholder="Comment..."
           name="comment"
         />
@@ -71,14 +71,14 @@ const CommentForm = ({ slug }) => {
         <input
           type="text"
           ref={nameEl}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
+          className="py-2 px-4 outline-none w-full rounded-md focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
           placeholder="Name"
           name="name"
         />
         <input
           type="text"
           ref={emailEl}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
+          className="py-2 px-4 outline-none w-full rounded-md focus:ring-2 focus:ring-indigo-600 bg-gray-100 text-gray-700"
           placeholder="Email"
           name="email"
         />
