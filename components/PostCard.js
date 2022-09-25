@@ -28,7 +28,7 @@ function PostCard({ post }) {
           <p className="text-gray-700 ml-2 text-lg">{post.author.name}</p>
         </div>
         <div className="inline-flex items-center gap-1 font-medium text-gray-700">
-          <span class="material-symbols-rounded">schedule</span>
+          <span className="material-symbols-rounded">schedule</span>
           <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
         </div>
       </div>
